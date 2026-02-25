@@ -39,14 +39,14 @@ public class Deck {
     //deletes the card at the index specified by the user
     // assuming cardIndex is directly from user input
     public void deleteCard(int cardIndex){
-        cardList.remove(cardIndex-1);
+        cardList.remove(cardIndex);
         System.out.println("Card deleted!");
     }
 
     //returns the Card object at the specified index of the cardList
     // assuming cardIndex is directly from user inputs
     public Card getCard(int cardIndex){
-        Card card = cardList.get(cardIndex-1);
+        Card card = cardList.get(cardIndex);
         return card;
     }
 }
