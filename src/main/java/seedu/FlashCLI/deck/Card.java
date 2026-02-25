@@ -1,4 +1,4 @@
-package FlashCLI.deck;
+package seedu.FlashCLI.deck;
 
 public class Card {
     private String question;

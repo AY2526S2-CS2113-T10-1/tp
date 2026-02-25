@@ -1,6 +1,6 @@
 // temporary file to test the Deck and Card classes and methods
-import FlashCLI.deck.Deck;
-import FlashCLI.deck.Card;
+import seedu.FlashCLI.deck.Deck;
+import seedu.FlashCLI.deck.Card;
 
 public class test {
     public static void main(String[] args) {
