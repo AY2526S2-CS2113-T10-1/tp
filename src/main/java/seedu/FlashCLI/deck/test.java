@@ -10,10 +10,10 @@ public class test {
         testdeck.addCard("question 3", "answer 3");
         testdeck.listCards();
         // delete question 1
-        testdeck.deleteCard(0);
+        testdeck.deleteCard(1);
         testdeck.listCards();
         //should return "question 2"
-        Card card = testdeck.getCard(0);
+        Card card = testdeck.getCard(1);
         System.out.println(card.getQuestion());
         System.out.println(card.getAnswer());
     }

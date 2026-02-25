@@ -4,7 +4,6 @@ import FlashCLI.deck.Card;
 
 public class Deck {
     private String deckName;
-    private int size = 0;
     private ArrayList<Card> cardList = new ArrayList();
 
     public Deck(String deckName){
@@ -16,15 +15,14 @@ public class Deck {
     }
 
     public int getSize(){
-        return size;
+        return cardList.size();
     }
     
     // takes in the card question and answer, creates a new Card object 
     // and adds it to the cardList
     public void addCard(String question, String answer){
-        Card newcard = new Card(question, answer);
-        cardList.add(newcard);
-        size++; 
+        Card newCard = new Card(question, answer);
+        cardList.add(newCard);
         System.out.println("Card added!");
     }
 
@@ -39,15 +37,16 @@ public class Deck {
     }
     
     //deletes the card at the index specified by the user
+    // assuming cardIndex is directly from user input
     public void deleteCard(int cardIndex){
-        cardList.remove(cardIndex);
-        size--;
+        cardList.remove(cardIndex-1);
         System.out.println("Card deleted!");
     }
 
     //returns the Card object at the specified index of the cardList
+    // assuming cardIndex is directly from user inputs
     public Card getCard(int cardIndex){
-        Card card = cardList.get(cardIndex);
+        Card card = cardList.get(cardIndex-1);
         return card;
     }
 }
