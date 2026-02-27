@@ -1,4 +1,4 @@
-package FlashCLI.deck;
+package seedu.FlashCLI.deck;
 
 public class Card {
     private String question;
@@ -16,4 +16,15 @@ public class Card {
     public String getAnswer(){
         return answer; 
     }
+
+    public String getQuestionString() {
+        String cardFront = "Question: %s";
+        return String.format(cardFront, question);
+    }
+
+    public String getAnswerString() {
+        String cardFront = "Answer: %s";
+        return String.format(cardFront, answer);
+    }
+
 }

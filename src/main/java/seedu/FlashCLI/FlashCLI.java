@@ -1,4 +1,4 @@
-package seedu.duke;
+package seedu.FlashCLI;
 
 import java.util.Scanner;
 

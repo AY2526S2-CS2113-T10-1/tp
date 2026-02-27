@@ -1,6 +1,6 @@
-package FlashCLI.deck;
+package seedu.FlashCLI.deck;
 import java.util.ArrayList;
-import FlashCLI.deck.Card;
+import seedu.FlashCLI.deck.Card;
 
 public class Deck {
     private String deckName;
@@ -28,25 +28,22 @@ public class Deck {
 
     //prints out the index and question of every question in the deck
     public void listCards(){
-        final String LISTLINE = "%d. %s";
+        final String LISTLINE = "%d. %s%n";
         int count = 1;
         for (Card card: cardList){
-            System.out.println(String.format(LISTLINE,count,card.getQuestion()));
+            System.out.printf(LISTLINE, count, card.getQuestion());
             count++;
         }
     }
     
     //deletes the card at the index specified by the user
-    // assuming cardIndex is directly from user input
     public void deleteCard(int cardIndex){
         cardList.remove(cardIndex);
         System.out.println("Card deleted!");
     }
 
     //returns the Card object at the specified index of the cardList
-    // assuming cardIndex is directly from user inputs
     public Card getCard(int cardIndex){
-        Card card = cardList.get(cardIndex);
-        return card;
+        return cardList.get(cardIndex);
     }
 }
