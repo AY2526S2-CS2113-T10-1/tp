@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.nio.charset.StandardCharsets;
 import java.util.List;
 import seedu.flashcli.deck.DeckManager;
 
@@ -49,7 +50,7 @@ public class Storage {
             return new DeckManager();
         }
         try {
-            String jsonData = Files.readString(filePath);
+            String jsonData = Files.readString(filePath, StandardCharsets.UTF_8);
             DeckManager manager = parse(jsonData);
 
             if (manager != null) {
@@ -83,7 +84,7 @@ public class Storage {
                 }
             }
             String jsonData = serialise(list);
-            Files.writeString(filePath, jsonData);
+            Files.writeString(filePath, jsonData, StandardCharsets.UTF_8);
         } catch (IOException e) {
             System.err.println("Error storing data, data may not be saved: " + e.getMessage());
         }

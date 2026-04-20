@@ -77,6 +77,8 @@ first. This guide walks you through how to install and use FlashCLI.
 `data/storage.json` after every command. You do not need to save manually. In case the
 data has been corrupted, FlashCLI will discard it.
 
+**Note:** The application automatically creates backup files in the `data/history/` directory. You can safely delete these files if needed.
+
 ## Notes on Command Format
 
 - Commands are not case-sensitive. For example, `addCard` and `addcard`
@@ -323,6 +325,19 @@ _______________________________
 
 ### Exiting the program : `exit`
 
+---
+
+### Saving data
+FlashCLI automatically saves all your decks and cards to prevent data loss. You do not need to manually save your data.
+- **Automatic saving:** After every command that modifies your data (e.g., createDeck, addCard, deleteCard, editCard, clearDeck, deleteDeck, and studywith confidence ratings), changes are immediately saved to the storage file.
+
+- **Data location:** Your data is stored in data/storage.jsonin the same directory as the application.
+
+- **Backup system:** FlashCLI creates backup copies of your data in the data/history/directory. These backup files are named with timestamps (e.g., flashcards_20250317_001.json).
+
+- **Data recovery:** If the main data file becomes corrupted, FlashCLI will attempt to restore from the latest backup file. If that fails, it will start with an empty set of decks.
+
+> **Note:** The backup files in the `data/history/` directory will accumulate over time. You can safely delete old backup files to free up disk space.
 ---
 
 ## FAQ

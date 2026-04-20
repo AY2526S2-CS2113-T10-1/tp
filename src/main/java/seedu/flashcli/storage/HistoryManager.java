@@ -12,6 +12,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
+import java.nio.charset.StandardCharsets;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
@@ -81,7 +82,7 @@ public class HistoryManager {
         String historyFileName = String.format("%s_%s_%s.json", baseFileName, date, sequenceStr);
         Path historyFile = historyDir.resolve(historyFileName);
         String jsonData = gson.toJson(currentData);
-        Files.writeString(historyFile, jsonData);
+        Files.writeString(historyFile, jsonData, StandardCharsets.UTF_8);
     }
 
     /**
@@ -138,7 +139,7 @@ public class HistoryManager {
             throw new IOException("Historical version not found: " + versionId);
         }
 
-        String jsonData = Files.readString(historyFile);
+        String jsonData = Files.readString(historyFile, StandardCharsets.UTF_8);
         return parseHistoricalData(jsonData);
     }
 
