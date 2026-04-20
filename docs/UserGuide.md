@@ -77,6 +77,8 @@ first. This guide walks you through how to install and use FlashCLI.
 `data/storage.json` after every command. You do not need to save manually. In case the
 data has been corrupted, FlashCLI will discard it.
 
+**Note:** The application automatically creates backup files in the `data/history/` directory. You can safely delete these files if needed.
+
 ## Notes on Command Format
 
 - Commands are not case-sensitive. For example, `addCard` and `addcard`
